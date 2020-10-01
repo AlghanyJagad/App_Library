@@ -1,0 +1,30 @@
+<div class="container">
+	<%= link_to "New Loan", new_tr_loan_path %>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>#</th>
+			<th>Member Name</th>
+			<th>Member Phone</th>
+			<th>Member Email</th>
+			<th>Book ID</th>
+			<th>Action</th>
+		</tr>
+		</thead>
+		<tbody>
+			<% @tr_loans.each.with_index (1) do | tr_loan, index | %>
+			<tr>
+				<td><%= index %></td>
+				<td><%= tr_loan.member_name %></td>
+				<td><%= tr_loan.member_phone %></td>
+                <td><%= tr_loan.member_email %></td>
+                <td><%= tr_loan.ms_book_id %></td>
+				<td><%= link_to "Show", tr_loan_path(tr_loan) %></td>
+				<td><%= link_to "Edit", edit_tr_loan_path(tr_loan) %></td>
+				<td><%= link_to "Delete", tr_loan_path(tr_loan),method: :delete, data: {confirm: 'Data Dihapus ? '}%></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+

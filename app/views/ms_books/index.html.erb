@@ -1,0 +1,28 @@
+<div class="container">
+	<%= link_to "New Book", new_ms_book_path %>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>#</th>
+			<th>Book Name</th>
+			<th>ID Publisher</th>
+			<th>Action</th>
+			<th></th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+			<% @ms_books.each.with_index (1) do | ms_book, index | %>
+			<tr>
+				<td><%= index %></td>
+				<td><%= ms_book.name %></td>
+				<td><%= ms_book.ms_publisher_id %></td>
+				<td><%= link_to "Show", ms_book_path(ms_book) %></td>
+				<td><%= link_to "Edit", edit_ms_book_path(ms_book) %></td>
+				<td><%= link_to "Delete", ms_book_path(ms_book),method: :delete, data: {confirm: 'Data Dihapus ? '}%></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+

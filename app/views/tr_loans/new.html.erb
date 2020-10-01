@@ -1,0 +1,15 @@
+<%= form_for @tr_loan do | f | %>
+<%= f.label :member_name %>
+<%= f.text_field :member_name %>
+
+<%= f.label :member_phone %>
+<%= f.text_field :member_phone %>
+
+<%= f.label :member_email %>
+<%= f.text_field :member_email %>
+
+<%= f.label :ms_book_id %>
+<%= f.text_field :ms_book_id %>
+
+<%= f.submit :Save%>
+<% end %>
